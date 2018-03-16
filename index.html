@@ -5,20 +5,29 @@
   <style type="text/css">
     body {
       font-family: sans-serif;
+      background-color: beige;
     }
     img {
       max-width: 100%;
+      border: solid black 2px;
+      padding: 2rem;
     }
     .red {
       color: red;
     }
+    .container {
+      width: 50%;
+      margin: auto;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>Whee!</h1>
-
-  <img id="roller" src="" alt="roller coaster">
-
+  <div class="container">
+    <h1>Whee!</h1>
+    
+    <img id="roller" src="" alt="roller coaster">
+  </div>
   <script type="text/javascript">
     // Description:
 
@@ -48,12 +57,12 @@
     theImg.setAttribute("src", imageSources[0]);
 
     // TODO: set howMany variable to a value user inputs
-    var howMany
+    var howMany = prompt("How many times would you like to ride?");
 
     var counter = 1;
 
     // TODO: execute this loop the number of times user requested
-    while(false){
+    while(counter <= howMany){
       console.log("Wheee! This is the ", counter, " time we've done this!");
 
       // find value of counter modulo length of sources array-
@@ -64,7 +73,11 @@
       theImg.setAttribute("src", imageSources[theOne]);
 
       // TODO: increment the counter
+      counter = counter + 1;
     }
+    
+    var h1V = document.querySelector("h1");
+    h1V.classList.add("red");
 
     // EXTRA CHALLENGES:
     // 1. Using JS, add a class of "red" to the <h1>.
